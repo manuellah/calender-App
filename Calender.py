@@ -9,12 +9,12 @@ class Calender(object):
 
 	def addEvent(self):
 		#Function to add events to the calender
-		date =  str(raw_input("Enter Date of the Event"))
-		name =  str(raw_input("Enter Name of the Event"))
-		time =  str(raw_input("Set Time of the Event"))
+		date =  str(raw_input("Enter Date of the Event  "))
+		name =  str(raw_input("Enter Name of the Event  "))
+		time =  str(raw_input("Set Time of the Event  "))
 		date_time = (date, time)
 		self.events_dict[date_time] = name
-		new_command()
+		self.new_command()
 
 	def view_LastEvent(self):
 		if not self.events_dict:
@@ -22,24 +22,25 @@ class Calender(object):
 			return
 		#Function to view LastEvent on the calender
 		key_container = self.events_dict.keys()
-		key_container.sort()
-		last = key_container(len(key_container) - 1) 
 
-		description = events_dict[last]
-		print "Event {} ondate {} Time".format(description, last[0], last[1])
-		new_command()
+		key_container.sort()
+		last =  key_container[-1]
+		t = tuple(last)
+		description = self.events_dict[t]
+		print "Event {} on date {} Time {}".format(description, last[0], last[1])
+		self.new_command()
 
 		
 	def list_AllEvents(self):
 		#Function to view all events on the calender
 		for key in self.events_dict:
 
-			print (key, self.events_dict[key] )
-		new_command()
+			print "Event {} on date {} Time  {}".format(self.events_dict[key], key[0], key[1])
+		self.new_command()
 
 		
 	def new_command(self):
-		cmd = raw_input('Enter a command')
+		cmd = raw_input('Enter a command , list of commands are: ADD -> add, LIST_ALL -> To list all, LIST_LAST -> to list last event and N to exit (Case not sensitive) ')
 		print cmd
 		cmd = cmd.upper()
 		print cmd
