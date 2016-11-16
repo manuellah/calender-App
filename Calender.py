@@ -49,6 +49,3 @@ class Calender(object):
 
 
 
-if __name__ == "__main__":
-	Calender(sys.argv[1]).new_command()
-
