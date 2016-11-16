@@ -21,13 +21,17 @@ class Calender(object):
 		key_container = self.events_dict.keys()
 		key_container.sort()
 		last = key_container(len(key_container) - 1) 
+
 		description = events_dict[last]
 		print "Event {} ondate {} Time".format(description, last[0], last[1])
+
 		
 	def list_AllEvents(self):
 		#Function to view all events on the calender
 		for key in self.events_dict:
+
 			print (key, self.events_dict[key] )
+
 		
 	def new_command(self):
 		cmd = raw_input('Enter a command')
@@ -47,6 +51,7 @@ class Calender(object):
 
 		else:
 			print 'Invalid command ', cmd
+
 
 
 
