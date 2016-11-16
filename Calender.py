@@ -40,7 +40,10 @@ class Calender(object):
 
 		
 	def new_command(self):
-		cmd = raw_input('Enter a command , list of commands are: ADD -> add, LIST_ALL -> To list all, LIST_LAST -> to list last event and N to exit (Case not sensitive) ')
+		print '===='* 30
+		print "\n\nEnter a command , list of commands are: ADD -> add, LIST_ALL -> To list all, LIST_LAST -> to list last event and N to exit (Case not sensitive) "
+		print "ADD -> add, LIST_ALL -> To list all, LIST_LAST -> to list last event and N to exit (Case not sensitive) \n"
+		cmd = raw_input()
 		print cmd
 		cmd = cmd.upper()
 		print cmd
