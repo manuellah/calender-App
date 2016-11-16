@@ -10,9 +10,9 @@ class Calender(object):
 
 	def addEvent(self):
 		#Function to add events to the calender
-		date =  input(Enter Date of the Event)
-		name =  input(Enter Name of the Event)
-		time =  input(Set Time of the Event)
+		date =  input("Enter Date of the Event")
+		name =  input("Enter Name of the Event")
+		time =  input("Set Time of the Event")
 		date_time = (date, time)
 		event_dict[date_time] = name
 
@@ -22,7 +22,8 @@ class Calender(object):
 		
 	def list_AllEvents():
 		#Function to view all events on the calender
-		pass
+		for key,value in event_dict():
+			print (key,value)
 
 
 if __name__ == "__main__":
