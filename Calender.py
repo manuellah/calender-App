@@ -9,14 +9,17 @@ class Calender(object):
 
 	def addEvent(self):
 		#Function to add events to the calender
-		date =  input("Enter Date of the Event")
-		name =  input("Enter Name of the Event")
-		time =  input("Set Time of the Event")
+		date =  str(raw_input("Enter Date of the Event"))
+		name =  str(raw_input("Enter Name of the Event"))
+		time =  str(raw_input("Set Time of the Event"))
 		date_time = (date, time)
-		events_dict[date_time] = name
+		self.events_dict[date_time] = name
+		new_command()
 
-	def view_LastEvent():
-
+	def view_LastEvent(self):
+		if not self.events_dict:
+			print "NO ITEM"
+			return
 		#Function to view LastEvent on the calender
 		key_container = self.events_dict.keys()
 		key_container.sort()
@@ -24,6 +27,7 @@ class Calender(object):
 
 		description = events_dict[last]
 		print "Event {} ondate {} Time".format(description, last[0], last[1])
+		new_command()
 
 		
 	def list_AllEvents(self):
@@ -31,6 +35,7 @@ class Calender(object):
 		for key in self.events_dict:
 
 			print (key, self.events_dict[key] )
+		new_command()
 
 		
 	def new_command(self):
@@ -51,6 +56,7 @@ class Calender(object):
 
 		else:
 			print 'Invalid command ', cmd
+
 
 
 
