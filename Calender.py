@@ -10,7 +10,11 @@ class Calender(object):
 
 	def addEvent(self):
 		#Function to add events to the calender
-		pass
+		date =  input("Enter Date of the Event")
+		name =  input("Enter Name of the Event")
+		time =  input("Set Time of the Event")
+		date_time = (date, time)
+		event_dict[date_time] = name
 
 	def view_LastEvent(self):
 		#Function to view LastEvent on the calender
@@ -35,8 +39,6 @@ class Calender(object):
 
 		else:
 			print 'Invalid command ', cmd
-
-
 
 
 
