@@ -22,7 +22,9 @@ class Calender(object):
 		
 	def list_AllEvents(self):
 		#Function to view all events on the calender
-		pass
+		for key, value in event.items() :
+			print (key, value)
+		
 	def new_command(self):
 		cmd = input('Enter a command')
 		cmd = cmd.upper()
