@@ -27,8 +27,8 @@ class Calender(object):
 		
 	def list_AllEvents(self):
 		#Function to view all events on the calender
-		for key, value in self.events_dict:
-            print key, value
+		for key in self.events_dict:
+            print key, self.events_dict[key]
 		
 	def new_command(self):
 		cmd = input('Enter a command')
