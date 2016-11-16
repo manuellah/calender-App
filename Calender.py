@@ -17,6 +17,8 @@ class Calender(object):
 		event_dict[date_time] = name
 
 	def view_LastEvent():
+
+		#Function to view LastEvent on the calender
 		key_container = self.event_dict.keys()
 		key_container.sort()
 		last = key_container(len(key_container) - 1) 
@@ -25,8 +27,8 @@ class Calender(object):
 		
 	def list_AllEvents(self):
 		#Function to view all events on the calender
-		for key, value in self.events_dict.values() :
-			print (key, value)
+		for key, value in self.events_dict:
+            print key, value
 		
 	def new_command(self):
 		cmd = input('Enter a command')
