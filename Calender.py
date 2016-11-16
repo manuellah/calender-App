@@ -17,19 +17,17 @@ class Calender(object):
 		event_dict[date_time] = name
 
 	def view_LastEvent():
+
+		#Function to view LastEvent on the calender
 		key_container = self.event_dict.keys()
 		key_container.sort()
 		last = key_container(len(key_container) - 1) 
 		description = event_dict[last]
 		print "Event {} ondate {} Time".format(description, last[0], last[1])
-    
-	def view_LastEvent(self):
-		#Function to view LastEvent on the calender
-		pass
 		
 	def list_AllEvents(self):
 		#Function to view all events on the calender
-		for key, value in self.event-items() :
+		for key, value in self.event_dict() :
 			print (key, value)
 		
 	def new_command(self):
