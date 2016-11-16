@@ -1,6 +1,6 @@
 class Calender(object):
 	"""
-		Calender Object
+		Calender App to keep track of events on their calendar.
 	"""
 	def __init__(self, arg):
 		self.arg = arg
