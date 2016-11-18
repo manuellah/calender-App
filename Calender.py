@@ -2,7 +2,7 @@ import sys
 
 class Calender(object):
 	"""
-		Calender App to keep track of events on their calendar.
+		Calender App to keep track of events on the calendar.
 	"""
 	def __init__(self):
 		self.events_dict = {}
@@ -17,10 +17,10 @@ class Calender(object):
 		self.new_command()
 
 	def view_LastEvent(self):
-		if not self.events_dict:
-			print "NO ITEM"
-			return
 		#Function to view LastEvent on the calender
+		if not self.events_dict:
+			print "No Available Items"
+			self.new_command()
 		key_container = self.events_dict.keys()
 
 		key_container.sort()
@@ -40,26 +40,56 @@ class Calender(object):
 
 		
 	def new_command(self):
-		print '===='* 30
-		print "\n\nEnter a command , list of commands are: ADD -> add, LIST_ALL -> To list all, LIST_LAST -> to list last event and N to exit (Case not sensitive) "
-		print "ADD -> add, LIST_ALL -> To list all, LIST_LAST -> to list last event and N to exit (Case not sensitive) \n"
+		# Commandline logic
+		print '===='* 20
+		print "\n\nPlease enter a command to continue:"
+		print
+		print "Here is a list of available commands:(Case not sensitive)"
+		print "0. HELLO"
+		print "1. ADD EVENT : To add an event"
+		print "2. LIST ALL  : To list all"
+		print "3. LIST LAST : To list last event"
+		print "4. EXIT      : To exit \n"
+		
 		cmd = raw_input()
-		print cmd
 		cmd = cmd.upper()
-		print cmd
 
-		if cmd in ['ADD', 'LIST_LAST', 'LIST_ALL', 'N']:
-			if cmd == 'ADD':
+		if cmd in ['ADD EVENT', 'LIST LAST', 'LIST ALL', 'EXIT', 'HELLO']:
+			if cmd == 'HELLO':
+				print 'Hi, and Welcome, To start here is a list of all your events!'
+				print
+				if self.events_dict == {}:
+					print "Congradulations, your event list is Empty!"
+					self.new_command()
+				else:
+					self.list_AllEvents()
+			if cmd == 'ADD EVENT':
 				self.addEvent()
-			elif cmd == 'LIST_ALL':
-				self.list_AllEvents()
-			elif cmd == 'LIST_LAST':
+			elif cmd == 'LIST ALL':
+				if self.events_dict == {}:
+					print "Congradulations, your event list is Empty!"
+					self.new_command()
+				else:
+					self.list_AllEvents()
+			elif cmd == 'LIST LAST':
 				self.view_LastEvent()
-			elif cmd == 'N':
-				sys.exit()
+			elif cmd == 'EXIT':
+				print
+				answer = raw_input("Are you sure?(yes/no) ")
+				while answer in ['no', 'yes']:
+					if answer == 'no':
+						self.new_command()
+					if answer == 'yes':
+						print "Goodluck today, Bye!"
+						print
+						sys.exit()
+				else:
+					print 'Invalid command, please try again!'
+					self.new_command()
 
 		else:
-			print 'Invalid command ', cmd
+			print 'Invalid command, Please check below for available commands and try again!'
+			self.new_command()
 
 
 
